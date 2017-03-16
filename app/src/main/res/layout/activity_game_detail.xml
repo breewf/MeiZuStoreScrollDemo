@@ -74,14 +74,15 @@
                     android:background="@color/white"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    app:tl_textsize="14sp"
-                    app:tl_textBold="BOTH"
-                    app:tl_textUnselectColor="@color/black"
-                    app:tl_textSelectColor="@color/theme_color"
                     app:tl_indicator_color="@color/theme_color"
+                    app:tl_indicator_height="3dp"
+                    app:tl_indicator_style="NORMAL"
                     app:tl_indicator_width="10dp"
                     app:tl_tab_space_equal="true"
-                    app:tl_indicator_style="NORMAL"/>
+                    app:tl_textBold="BOTH"
+                    app:tl_textSelectColor="@color/theme_color"
+                    app:tl_textUnselectColor="@color/black"
+                    app:tl_textsize="14sp"/>
 
                 <View
                     android:layout_width="match_parent"
@@ -94,26 +95,18 @@
 
             </android.support.design.widget.AppBarLayout>
 
-            <android.support.v4.widget.NestedScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:orientation="vertical"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <include layout="@layout/game_test_layout"/>
 
                     <android.support.v4.view.ViewPager
                         android:id="@+id/game_viewpager"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
 
-                </LinearLayout>
-
-            </android.support.v4.widget.NestedScrollView>
+            </LinearLayout>
 
         </android.support.design.widget.CoordinatorLayout>
 
