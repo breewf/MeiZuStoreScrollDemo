@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- 通用颜色值 -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="common_bg">#F2F2F2</color>
+    <color name="common_bg_f9">#F9F9F9</color>
+    <color name="theme_color">#ff6E00</color>
+    <color name="theme_color_deep">#ff4E00</color>
+    <color name="black_51">#515151</color>
+    <color name="black_cc">#cccccc</color>
+
+    <color name="white_f0">#f0f0f0</color>
+    <color name="white_f1">#f1f1f1</color>
+    <color name="white_f2">#f2f2f2</color>
+    <color name="white_f4">#f4f4f4</color>
+    <color name="white_f6">#f6f6f6</color>
+    <color name="white_f8">#f8f8f8</color>
+    <color name="black_db">#dbdbdb</color>
+    <color name="black_c0">#c0c0c0</color>
+    <color name="black_e5">#e5e5e5</color>
+    <color name="black_33">#333333</color>
+    <color name="black_66">#666666</color>
+    <color name="black_88">#888888</color>
+    <color name="black_8c">#8c8c8c</color>
+    <color name="black_99">#999999</color>
+
+</resources>
