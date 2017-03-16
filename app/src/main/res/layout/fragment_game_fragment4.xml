@@ -5,12 +5,12 @@
     android:orientation="vertical"
     tools:context="com.ghy.meizustorescrolldemo.fragment.GameFragment2">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:text="@string/hello_blank_fragment"/>
+        android:layout_height="match_parent">
+
+        <include layout="@layout/game_test_layout"/>
+
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>
