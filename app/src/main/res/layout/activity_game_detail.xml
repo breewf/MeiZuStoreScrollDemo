@@ -15,7 +15,6 @@
         android:layout_height="48dp"
         android:gravity="center_vertical">
 
-
         <ImageView
             android:id="@+id/iv_arrow_down"
             android:layout_width="wrap_content"
@@ -40,176 +39,83 @@
         android:layout_height="1px"
         android:background="@color/black_cc"/>
 
-    <!--顶部可隐藏布局-->
-
     <LinearLayout
-        android:id="@+id/game_info_hide_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="20dp">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@mipmap/game_icon"/>
-
-            <RelativeLayout
-                android:layout_width="0dp"
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:background="@color/white">
 
-                <TextView
-                    android:id="@+id/tv_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="龙之谷"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:textStyle="bold"/>
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:id="@+id/toolbar_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
-                <TextView
-                    android:id="@+id/tv_title_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@+id/tv_title"
-                    android:background="@drawable/btn_orange"
-                    android:padding="2dp"
-                    android:text="新品"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"/>
+                    <include layout="@layout/game_info_top_layout"/>
 
-                <com.iarcuschin.simpleratingbar.SimpleRatingBar
-                    android:id="@+id/rating_bar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_title"
+                </android.support.design.widget.CollapsingToolbarLayout>
+
+                <com.flyco.tablayout.SlidingTabLayout
+                    android:id="@+id/game_tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
                     android:layout_marginTop="5dp"
-                    app:srb_borderColor="@color/theme_color"
-                    app:srb_fillColor="@color/theme_color"
-                    app:srb_numberOfStars="5"
-                    app:srb_rating="5"
-                    app:srb_starSize="10dp"
-                    app:srb_stepSize="0.5"/>
+                    android:background="@color/white"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    app:tl_textsize="14sp"
+                    app:tl_textBold="BOTH"
+                    app:tl_textUnselectColor="@color/black"
+                    app:tl_textSelectColor="@color/theme_color"
+                    app:tl_indicator_color="@color/theme_color"
+                    app:tl_indicator_width="10dp"
+                    app:tl_tab_space_equal="true"
+                    app:tl_indicator_style="NORMAL"/>
 
-                <TextView
-                    android:id="@+id/tv_score"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_title"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@+id/rating_bar"
-                    android:text="9.8"
-                    android:textColor="@color/theme_color"
-                    android:textSize="12sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/tv_down"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_score"
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:layout_marginTop="5dp"
-                    android:text="55万人安装 633MB"
-                    android:textColor="@color/black_99"
-                    android:textSize="13sp"/>
+                    android:background="@color/black_cc"/>
 
 
-            </RelativeLayout>
+            </android.support.design.widget.AppBarLayout>
 
-        </LinearLayout>
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:src="@mipmap/icon_yinhao_up"/>
+                    <include layout="@layout/game_test_layout"/>
 
-            <TextView
-                android:id="@+id/tv_dec"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="经典还原，重历阿尔特里亚"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="16sp"/>
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/game_viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
 
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:src="@mipmap/icon_yinhao_down"/>
+                </LinearLayout>
 
-        </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_tag_color_red"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingTop="2dp"
-                android:paddingBottom="2dp"
-                android:text="即时"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:textSize="12sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_tag_color_blue"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingTop="2dp"
-                android:paddingBottom="2dp"
-                android:layout_marginLeft="10dp"
-                android:text="3DMMO"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:textSize="12sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_tag_color_green"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingTop="2dp"
-                android:paddingBottom="2dp"
-                android:layout_marginLeft="10dp"
-                android:text="RPG"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:textSize="12sp"/>
-
-        </LinearLayout>
-
+        </android.support.design.widget.CoordinatorLayout>
 
     </LinearLayout>
 
