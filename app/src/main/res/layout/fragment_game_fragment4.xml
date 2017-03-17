@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/game_test_layout"/>
+        <include layout="@layout/game_eval_layout"/>
 
     </android.support.v4.widget.NestedScrollView>
 

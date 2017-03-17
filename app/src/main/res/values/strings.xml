@@ -3,4 +3,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="game_intro">《龙之谷》手游是一款由腾讯运营，以端游《龙之谷》为故事背景制作的3DARPG手游。游戏原汁原味复刻了端游的剧情、世界观，带你重回记忆中的阿尔特里亚，重现最激爽的3D无锁定战斗，给你畅快的指尖战斗体验！和小伙伴一起组队屠龙，更有竞技场可以一决高下，社交、公会系统让你再续前缘，重新找回当年的好友！\n\n\n
+版本描述：\n\n
+《龙之谷》手游震撼首发！\n
+-还原记忆中的阿尔特里亚\n
+-无锁定最激爽的战斗\n
+-四大职业组队闯关\n
+-炫酷时装个性随你\n
+-竞技高手随时一决高下</string>
 </resources>
