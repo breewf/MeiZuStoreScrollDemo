@@ -8,6 +8,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -24,6 +26,9 @@ import butterknife.ButterKnife;
 
 public class GameDetailActivity extends AppCompatActivity implements OnTabSelectListener {
 
+
+    @Bind(R.id.btn_install)
+    TextView btnInstall;
 
     private String[] mTitles = {"详情", "评论", "资讯", "论坛"};
     private ArrayList<Fragment> mFragments = new ArrayList<>();
@@ -50,6 +55,13 @@ public class GameDetailActivity extends AppCompatActivity implements OnTabSelect
             }
         });
 
+        btnInstall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(GameDetailActivity.this, "然而并没有安装，哈哈哈", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         GameFragment1 gameFragment1 = new GameFragment1();
         GameFragment2 gameFragment2 = new GameFragment2();
         GameFragment3 gameFragment3 = new GameFragment3();
@@ -65,19 +77,51 @@ public class GameDetailActivity extends AppCompatActivity implements OnTabSelect
         //设置关联
         mGameTabLayout.setViewPager(mGameViewPager);
         mGameTabLayout.setOnTabSelectListener(GameDetailActivity.this);
+        mGameViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                changePage(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
 
     }
 
     @Override
     public void onTabSelect(int position) {
-
-
+        changePage(position);
     }
 
     @Override
     public void onTabReselect(int position) {
 
+    }
+
+    private void changePage(int position) {
+        switch (position){
+            case 0:
+                btnInstall.setText("安装");
+                break;
+            case 1:
+                btnInstall.setText("安装后评论");
+                break;
+            case 2:
+                btnInstall.setText("发文章");
+                break;
+            case 3:
+                btnInstall.setText("发帖子");
+                break;
+        }
     }
 
     /**

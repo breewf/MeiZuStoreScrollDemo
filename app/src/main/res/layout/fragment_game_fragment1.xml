@@ -13,7 +13,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="80dp">
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -25,9 +26,22 @@
             </HorizontalScrollView>
 
             <include layout="@layout/game_intro_layout" />
-            <include layout="@layout/game_eval_layout" />
-            <include layout="@layout/game_forum_layout" />
-            <include layout="@layout/game_other_layout" />
+
+            <!-- 点击应用介绍时执行上下平移动画的布局-->
+            <LinearLayout
+                android:id="@+id/up_down_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <include layout="@layout/game_eval_layout" />
+
+                <include layout="@layout/game_forum_layout" />
+
+                <include layout="@layout/game_other_layout" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

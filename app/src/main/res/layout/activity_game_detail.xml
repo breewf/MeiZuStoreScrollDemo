@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,107 +8,143 @@
     android:orientation="vertical"
     tools:context="com.ghy.meizustorescrolldemo.GameDetailActivity">
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:id="@+id/iv_arrow_down"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:padding="10dp"
-            android:src="@mipmap/arrow_down"/>
-
-        <ImageView
-            android:id="@+id/iv_share"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:padding="10dp"
-            android:src="@mipmap/share_icon"/>
-
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/black_cc"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.design.widget.CoordinatorLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:layout_height="48dp"
+            android:gravity="center_vertical">
 
-            <android.support.design.widget.AppBarLayout
-                android:id="@+id/appbar"
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/iv_arrow_down"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/white">
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:src="@mipmap/arrow_down" />
 
-                <android.support.design.widget.CollapsingToolbarLayout
-                    android:id="@+id/toolbar_layout"
+            <ImageView
+                android:id="@+id/iv_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                android:src="@mipmap/share_icon" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/black_cc" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.design.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <android.support.design.widget.AppBarLayout
+                    android:id="@+id/appbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+
+                    <android.support.design.widget.CollapsingToolbarLayout
+                        android:id="@+id/toolbar_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                        <include layout="@layout/game_info_top_layout" />
+
+                    </android.support.design.widget.CollapsingToolbarLayout>
+
+                    <com.flyco.tablayout.SlidingTabLayout
+                        android:id="@+id/game_tab_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/white"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        app:tl_indicator_color="@color/theme_color"
+                        app:tl_indicator_height="3dp"
+                        app:tl_indicator_style="NORMAL"
+                        app:tl_indicator_width="10dp"
+                        app:tl_tab_space_equal="true"
+                        app:tl_textBold="BOTH"
+                        app:tl_textSelectColor="@color/theme_color"
+                        app:tl_textUnselectColor="@color/black"
+                        app:tl_textsize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/black_cc" />
+
+
+                </android.support.design.widget.AppBarLayout>
+
+                <android.support.v4.widget.NestedScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-                    <include layout="@layout/game_info_top_layout"/>
-
-                </android.support.design.widget.CollapsingToolbarLayout>
-
-                <com.flyco.tablayout.SlidingTabLayout
-                    android:id="@+id/game_tab_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/white"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    app:tl_indicator_color="@color/theme_color"
-                    app:tl_indicator_height="3dp"
-                    app:tl_indicator_style="NORMAL"
-                    app:tl_indicator_width="10dp"
-                    app:tl_tab_space_equal="true"
-                    app:tl_textBold="BOTH"
-                    app:tl_textSelectColor="@color/theme_color"
-                    app:tl_textUnselectColor="@color/black"
-                    app:tl_textsize="14sp"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/black_cc"/>
-
-
-            </android.support.design.widget.AppBarLayout>
-
-            <android.support.v4.widget.NestedScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fillViewport="true"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                    android:fillViewport="true"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                     <android.support.v4.view.ViewPager
                         android:id="@+id/game_viewpager"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent" />
 
-            </android.support.v4.widget.NestedScrollView>
+                </android.support.v4.widget.NestedScrollView>
 
-        </android.support.design.widget.CoordinatorLayout>
+            </android.support.design.widget.CoordinatorLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/black_cc"
+            android:layout_above="@+id/btn_install" />
+
+        <TextView
+            android:id="@+id/btn_install"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="安装"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_red_angle"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

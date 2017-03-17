@@ -6,29 +6,29 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="260dp"
+        android:layout_width="140dp"
+        android:layout_height="240dp"
         android:layout_marginLeft="5dp"
         android:src="@mipmap/game_pic1"/>
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="260dp"
+        android:layout_width="140dp"
+        android:layout_height="240dp"
         android:src="@mipmap/game_pic2"/>
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="260dp"
+        android:layout_width="140dp"
+        android:layout_height="240dp"
         android:src="@mipmap/game_pic3"/>
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="260dp"
+        android:layout_width="140dp"
+        android:layout_height="240dp"
         android:src="@mipmap/game_pic4"/>
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="260dp"
+        android:layout_width="140dp"
+        android:layout_height="240dp"
         android:layout_marginRight="5dp"
         android:src="@mipmap/game_pic5"/>
 

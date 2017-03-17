@@ -1,7 +1,9 @@
 package com.ghy.meizustorescrolldemo.fragment;
 
+import android.animation.ObjectAnimator;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -10,10 +12,10 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ghy.meizustorescrolldemo.R;
@@ -26,6 +28,12 @@ public class GameFragment1 extends Fragment {
     @Bind(R.id.tv_game_intro)
     TextView tvGameIntro;
     String tvGameIntroString;
+    @Bind(R.id.up_down_layout)
+    LinearLayout upDownLayout;
+
+    private float introLayoutHeight;
+    private float introLayoutThreeHeight;
+    private float height;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,6 +51,7 @@ public class GameFragment1 extends Fragment {
         tvGameIntro.post(new Runnable() {
             @Override
             public void run() {
+                introLayoutHeight = tvGameIntro.getHeight();
                 setThreeLine();
             }
         });
@@ -52,8 +61,19 @@ public class GameFragment1 extends Fragment {
                 if (tvGameIntro.getMaxLines() == 3) {
                     tvGameIntro.setText(tvGameIntroString);
                     tvGameIntro.setMaxLines(Integer.MAX_VALUE);
+
+//                    float curTranslationY = tvGameIntro.getTranslationY();
+//                    ObjectAnimator animator = ObjectAnimator.ofFloat(upDownLayout, "translationY", curTranslationY, height);
+//                    animator.setDuration(600);
+//                    animator.start();
+
                 } else {
                     setThreeLine();
+
+//                    float curTranslationY = tvGameIntro.getTranslationY();
+//                    ObjectAnimator animator = ObjectAnimator.ofFloat(upDownLayout, "translationY", curTranslationY, -height);
+//                    animator.setDuration(600);
+//                    animator.start();
                 }
             }
         });
@@ -66,7 +86,7 @@ public class GameFragment1 extends Fragment {
      *
      * @return
      */
-    private void setThreeLine(){
+    private void setThreeLine() {
         tvGameIntro.setMaxLines(3);
         String threeLineText = getThreeLineString();
         SpannableString spannableString = new SpannableString(threeLineText + "更多");
@@ -75,6 +95,8 @@ public class GameFragment1 extends Fragment {
         spannableString.setSpan(styleSpan_B, threeLineText.length(), spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         spannableString.setSpan(colorSpan, threeLineText.length(), spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         tvGameIntro.setText(spannableString);
+        introLayoutThreeHeight = tvGameIntro.getHeight();
+        height = introLayoutHeight - introLayoutThreeHeight;
     }
 
 
