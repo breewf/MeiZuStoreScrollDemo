@@ -1,9 +1,7 @@
 package com.ghy.meizustorescrolldemo.fragment;
 
-import android.animation.ObjectAnimator;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -27,13 +25,15 @@ public class GameFragment1 extends Fragment {
 
     @Bind(R.id.tv_game_intro)
     TextView tvGameIntro;
+    @Bind(R.id.tv_game_intro_copy)
+    TextView tvGameIntroCopy;//计算三行的高度
     String tvGameIntroString;
     @Bind(R.id.up_down_layout)
     LinearLayout upDownLayout;
 
-    private float introLayoutHeight;
-    private float introLayoutThreeHeight;
-    private float height;
+    private float introLayoutHeight;//应用介绍所有文本高度
+    private float introLayoutThreeHeight;//应用介绍三行文本高度
+    private float animHeight;//要平移的高度
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,6 +52,8 @@ public class GameFragment1 extends Fragment {
             @Override
             public void run() {
                 introLayoutHeight = tvGameIntro.getHeight();
+                introLayoutThreeHeight = tvGameIntroCopy.getHeight();
+                animHeight = introLayoutHeight - introLayoutThreeHeight;
                 setThreeLine();
             }
         });
@@ -62,16 +64,14 @@ public class GameFragment1 extends Fragment {
                     tvGameIntro.setText(tvGameIntroString);
                     tvGameIntro.setMaxLines(Integer.MAX_VALUE);
 
-//                    float curTranslationY = tvGameIntro.getTranslationY();
-//                    ObjectAnimator animator = ObjectAnimator.ofFloat(upDownLayout, "translationY", curTranslationY, height);
+//                    ObjectAnimator animator = ObjectAnimator.ofFloat(upDownLayout, "translationY", animHeight);
 //                    animator.setDuration(600);
 //                    animator.start();
 
                 } else {
                     setThreeLine();
 
-//                    float curTranslationY = tvGameIntro.getTranslationY();
-//                    ObjectAnimator animator = ObjectAnimator.ofFloat(upDownLayout, "translationY", curTranslationY, -height);
+//                    ObjectAnimator animator = ObjectAnimator.ofFloat(upDownLayout, "translationY", -animHeight);
 //                    animator.setDuration(600);
 //                    animator.start();
                 }
@@ -95,8 +95,6 @@ public class GameFragment1 extends Fragment {
         spannableString.setSpan(styleSpan_B, threeLineText.length(), spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         spannableString.setSpan(colorSpan, threeLineText.length(), spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         tvGameIntro.setText(spannableString);
-        introLayoutThreeHeight = tvGameIntro.getHeight();
-        height = introLayoutHeight - introLayoutThreeHeight;
     }
 
 
