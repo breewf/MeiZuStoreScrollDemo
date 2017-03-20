@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.btn_get_game)
     TextView mBtnGetGame;
 
+    @Bind(R.id.view_status_bar)
+    View mViewStatusBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
