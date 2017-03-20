@@ -25,6 +25,7 @@ import android.support.v4.graphics.drawable.DrawableCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.Xml;
 import android.view.View;
 import android.view.Window;
@@ -611,6 +612,31 @@ public class AppUtils {
         }
     }
     /*-------------------------MIUI状态栏--------------------------*/
+
+    /**
+     * 获取状态栏高度
+     *
+     * @param context
+     * @return
+     */
+    public static int getStatusBarHeight(Context context) {
+        Class<?> c;
+        Object obj;
+        Field field;
+        int x;
+        int statusHeight = 0;
+        try {
+            c = Class.forName("com.android.internal.R$dimen");
+            obj = c.newInstance();
+            field = c.getField("status_bar_height");
+            x = Integer.parseInt(field.get(obj).toString());
+            statusHeight = context.getResources().getDimensionPixelSize(x);
+        } catch (Exception e1) {
+            Log.i("TAG", "get status bar height fail");
+            e1.printStackTrace();
+        }
+        return statusHeight;
+    }
 
     /**
      * 应用程序运行命令获取 Root权限，设备必须已破解(获得ROOT权限)

@@ -161,5 +161,4 @@ public class GameDetailActivity extends AppCompatActivity implements OnTabSelect
         ButterKnife.unbind(this);
     }
 
-
 }
