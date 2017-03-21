@@ -137,6 +137,19 @@ public class StatusBarUtils {
     /**
      * 清除MIUI或flyme或6.0以上版本状态栏黑色字体
      */
+    public static void statusBarDarkMode(Activity activity) {
+        if (AppUtils.isMeizuFlymeOS()) {
+            flyMeSetStatusBarLightMode(activity.getWindow(), false);
+        } else if (AppUtils.isMiUiOS()) {
+            MIUISetStatusBarLightMode(activity.getWindow(), false);
+        } else {
+            activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+        }
+    }
+
+    /**
+     * 清除MIUI或flyme或6.0以上版本状态栏黑色字体
+     */
     public static void statusBarDarkMode(Activity activity, int type) {
         if (type == 1) {
             MIUISetStatusBarLightMode(activity.getWindow(), false);

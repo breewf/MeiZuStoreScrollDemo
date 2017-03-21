@@ -127,8 +127,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:background="@color/black_cc"
-            android:layout_above="@+id/btn_install" />
+            android:background="@color/black_cc"/>
 
         <TextView
             android:id="@+id/btn_install"
@@ -143,7 +142,7 @@
             android:text="安装"
             android:textSize="16sp"
             android:textColor="@color/white"
-            android:background="@drawable/btn_blue_angle"/>
+            android:background="@drawable/btn_red_angle"/>
 
     </LinearLayout>
 

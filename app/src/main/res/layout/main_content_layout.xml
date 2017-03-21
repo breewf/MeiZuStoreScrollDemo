@@ -21,8 +21,8 @@
 
             <ImageView
                 android:id="@+id/iv_get_music"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 app:srcCompat="@mipmap/icon_music"/>
 
             <TextView
@@ -67,8 +67,8 @@
 
             <ImageView
                 android:id="@+id/iv_get_game"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 app:srcCompat="@mipmap/game_icon"/>
 
             <TextView
