@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:scrollbars="none">
 
-                <include layout="@layout/horizontal_pic_layout" />
+                <include layout="@layout/game_horizontal_pic_layout" />
 
             </HorizontalScrollView>
 

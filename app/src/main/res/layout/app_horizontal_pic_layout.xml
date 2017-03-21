@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="240dp"
+        android:layout_marginLeft="5dp"
+        android:src="@mipmap/music_1"/>
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="240dp"
+        android:src="@mipmap/music_2"/>
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="240dp"
+        android:src="@mipmap/music_3"/>
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="240dp"
+        android:src="@mipmap/music_4"/>
+
+</LinearLayout>

@@ -2,15 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <View
         android:id="@+id/view_status_bar"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:background="@color/white"/>
+        android:visibility="gone"
+        android:layout_height="25dp"/>
 
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/app_scroll_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -48,11 +50,18 @@
 
             <include layout="@layout/app_info_top_layout"/>
 
-            <include layout="@layout/app_info_top_layout"/>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
 
-            <include layout="@layout/app_info_top_layout"/>
+                <include layout="@layout/app_horizontal_pic_layout"/>
 
-            <include layout="@layout/app_info_top_layout"/>
+            </HorizontalScrollView>
+
+            <include layout="@layout/app_intro_layout"/>
+
+            <include layout="@layout/app_other_layout"/>
 
         </LinearLayout>
 

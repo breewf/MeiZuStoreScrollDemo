@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout
+        android:id="@+id/intro_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="5dp"
+            android:background="@color/color_blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="应用介绍"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginLeft="8dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_app_intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_layout"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="4dp"
+        android:textColor="@color/black_99"
+        android:text="@string/app_intro"/>
+
+    <TextView
+        android:id="@+id/tv_app_intro_copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_layout"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="5dp"
+        android:maxLines="3"
+        android:visibility="invisible"
+        android:textSize="12sp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="4dp"
+        android:textColor="@color/black_99"
+        android:text="@string/app_intro"/>
+
+</RelativeLayout>
