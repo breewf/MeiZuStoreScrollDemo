@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,7 +18,9 @@ import com.ghy.meizustorescrolldemo.fragment.GameFragment1;
 import com.ghy.meizustorescrolldemo.fragment.GameFragment2;
 import com.ghy.meizustorescrolldemo.fragment.GameFragment3;
 import com.ghy.meizustorescrolldemo.fragment.GameFragment4;
-import com.ghy.meizustorescrolldemo.utils.StatusBarUtils;
+import com.ghy.meizustorescrolldemo.statusbar.StatusBarCompat;
+import com.ghy.meizustorescrolldemo.utils.AppUtils;
+import com.ghy.meizustorescrolldemo.utils.StatusBarFlyMeUtils;
 
 import java.util.ArrayList;
 
@@ -46,7 +49,7 @@ public class GameDetailActivity extends AppCompatActivity implements OnTabSelect
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_detail);
         ButterKnife.bind(this);
-        StatusBarUtils.statusBarLightMode(this);
+        initStatusBarColor();
 
         mIvArrowDown.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,6 +125,30 @@ public class GameDetailActivity extends AppCompatActivity implements OnTabSelect
                 btnInstall.setText("发帖子");
                 break;
         }
+    }
+
+    /**
+     * 初始化状态栏颜色
+     */
+    private void initStatusBarColor() {
+        setStatusBarColor(ContextCompat.getColor(this, R.color.status_bar_bg));
+        if (AppUtils.isMiUiOS()) {//小米手机，设置为白底黑字
+            setStatusBarColor(ContextCompat.getColor(this, R.color.white));
+            AppUtils.setMiuiStatusBarDarkMode(this, true);
+        }
+        if (AppUtils.isMeizuFlymeOS()) {//魅族手机，设置为白底黑字
+            setStatusBarColor(ContextCompat.getColor(this, R.color.white));
+            StatusBarFlyMeUtils.setStatusBarDarkIcon(this, true);
+        }
+    }
+
+    /**
+     * 设置状态栏颜色
+     *
+     * @param color
+     */
+    public void setStatusBarColor(int color) {
+        StatusBarCompat.setStatusBarColor(this, color);
     }
 
     /**

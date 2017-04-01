@@ -12,6 +12,7 @@
     <color name="common_bg_f9">#F9F9F9</color>
     <color name="theme_color">#ff6E00</color>
     <color name="theme_color_deep">#ff4E00</color>
+    <color name="status_bar_bg">#bbbbbb</color>
     <color name="color_blue">#1C86EE</color>
     <color name="black_51">#515151</color>
     <color name="black_cc">#cccccc</color>

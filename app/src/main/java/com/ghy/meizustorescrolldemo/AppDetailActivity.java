@@ -3,8 +3,6 @@ package com.ghy.meizustorescrolldemo;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.ghy.meizustorescrolldemo.utils.StatusBarUtils;
-
 import butterknife.ButterKnife;
 
 public class AppDetailActivity extends Activity {
@@ -14,7 +12,6 @@ public class AppDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_detail);
         ButterKnife.bind(this);
-        StatusBarUtils.statusBarLightMode(this);
     }
 
     @Override
